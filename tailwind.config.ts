@@ -1,12 +1,19 @@
 /**
- * Nuxt Tailwind
- * {@link https://tailwindcss.nuxtjs.org/getting-started/setup}
+ * Tailwind CSS with Nuxt
+ * {@link https://tailwindcss.com/docs/guides/nuxtjs}
  */
 
 import { type Config } from 'tailwindcss'
 
 const config: Config = {
-  content: ['**/*.{js,ts,jsx,mdx,tsx,vue}'],
+  content: [
+    './components/**/*.{js,vue,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './app.vue',
+    './error.vue',
+  ],
   theme: {
     extend: {
       zIndex: {},
