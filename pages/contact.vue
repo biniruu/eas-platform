@@ -1,13 +1,11 @@
 <template>
   <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <h1>Contact</h1>
   </div>
 </template>
 
 <script scoped lang="ts">
   export default {
-    name: 'app',
+    name: 'contact-page',
   }
 </script>

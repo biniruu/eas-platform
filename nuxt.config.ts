@@ -1,5 +1,9 @@
 /**
- * https://nuxt.com/docs/api/configuration/nuxt-config
+ * Nuxt Config
+ * {@link https://nuxt.com/docs/api/configuration/nuxt-config}
+ *
+ * Modules
+ * {@link https://nuxt.com/modules}
  *
  * postcss : postcss 설정
  * devtools : nuxi로 Nuxt.js를 설치했을 때 기본 설정
@@ -20,7 +24,6 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
   typescript: {
     typeCheck: true, // typescript와 vue-tsc를 설치하면 dev server 빌드 과정에서 타입 체크 실행
   },

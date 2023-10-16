@@ -12,6 +12,7 @@ module.exports = {
   /**
    * Extends
    *
+   * @nuxtjs/eslint-config-typescript : nuxt 3를 위한, 옵션 없는 eslint 설정
    * eslint:recommended : eslint 추천 rule set
    * plugin:@typescript-eslint/recommended-type-checked : 타입스크립트 추천 룰셋 {@link https://typescript-eslint.io/linting/typed-linting/}
    * plugin:import/recommended : eslint-plugin-import 추천 rule set
@@ -21,6 +22,7 @@ module.exports = {
    * plugin:prettier/recommended : eslint-config-prettier 추천 rule set
    */
   extends: [
+    '@nuxtjs/eslint-config-typescript',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:import/recommended',
@@ -48,6 +50,7 @@ module.exports = {
     {
       /**
        * Specifying TSConfigs
+       * {@link https://typescript-eslint.io/linting/typed-linting/#specifying-tsconfigs}
        *
        * plugin:@typescript-eslint/disable-type-checked : turn off type-aware linting on specific subsets of files with a disabled-type-checked config {@link https://typescript-eslint.io/linting/typed-linting/#how-can-i-disable-type-aware-linting-for-a-subset-of-files}
        */
@@ -55,17 +58,31 @@ module.exports = {
       extends: ['plugin:@typescript-eslint/disable-type-checked'],
     },
   ],
-  parser: '@typescript-eslint/parser',
+  /**
+   * vue-eslint-parser
+   * {@link https://github.com/vuejs/vue-eslint-parser#-options}
+   */
+  parser: 'vue-eslint-parser',
   parserOptions: {
     /**
      * @typescript-eslint/parser
      * {@link https://typescript-eslint.io/packages/parser}
      *
+     * extraFileExtensions : 표준 확장자가 아닌 파일에서 에러 발생 방지
      * project : tsconfig.json 경로 설정. true로 설정하면 각 소스파일에서 가장 가까운 경로에 있는 tsconfig.json 파일을 자동으로 찾는다.
      * tsconfigRootDir : project에서 제공한 tsconfig의 상대 경로에 대한 루트 디렉토리 제공
      */
+    extraFileExtensions: ['.vue'],
+    parser: '@typescript-eslint/parser',
     project: true,
     tsconfigRootDir: __dirname,
+    /**
+     * vue-eslint-parser
+     * {@link https://github.com/vuejs/vue-eslint-parser#parseroptionsvuefeatures}
+     *
+     * vueFeatures : Vue.js와 연관된 기능 설정
+     */
+    // vueFeatures: {},
   },
   root: true, // 현재 설정 파일이 root임을 명시하는 옵션. true로 설정하면 상위 설정 파일 찾기를 여기서 멈춘다.
   rules: {
@@ -167,6 +184,20 @@ module.exports = {
         asyncArrow: 'always',
       },
     ],
+    /**
+     * Eslint-plugin-vue rules
+     * {@link https://eslint.vuejs.org/rules/}
+     *
+     * html-self-closing : html 태그 내부에 요소가 없을 때 self closing 태그 사용 강제
+     * multi-word-component-names : 컴포넌트 이름을 두 개 이상의 단어로 구성하도록 강제
+     * no-reserved-component-names : 컴포넌트 이름이 컴포넌트 파일명, html 태그명, 빌트인 컴포넌트명과 동일할 경우 오류 발생
+     * no-unused-components : 사용하지 않는 컴포넌트가 있을 때 오류 발생
+     */
+    'vue/component-definition-name-casing': ['error', 'kebab-case'],
+    'vue/html-self-closing': 'warn',
+    'vue/multi-word-component-names': 'warn',
+    'vue/no-reserved-component-names': 'warn',
+    'vue/no-unused-components': 'warn',
     /**
      * Typescript-eslint supported rules
      * {@link https://typescript-eslint.io/rules/}

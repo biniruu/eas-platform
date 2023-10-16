@@ -1,8 +1,4 @@
 {
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.tabSize": 4
-  },
   "autoimport.useSemiColon": false, // auto import 기능으로 import한 모듈에 세미콜론 삽입
   "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
   "aws.telemetry": false,
@@ -47,10 +43,8 @@
   },
   "editor.unfoldOnClickAfterEndOfLine": true,
   "emmet.includeLanguages": {
-    "javascript": "javascriptreact", // jsx 또는 js에서 emmet을 사용하는 옵션
-    "postcss": "css" // postcss 문법을 사용하기 위한 옵션
-    // "vue": "html", // vue 키의 값을 css로 하면 html 대신 css emmet을 사용할 수 있다
-    // "vue-html": "html"
+    "postcss": "css", // postcss 문법을 사용하기 위한 옵션
+    "vue-html": "html"
   },
   "emmet.preferences": {
     "css.color.short": true
@@ -103,10 +97,7 @@
   "npm.keybindingsChangedWarningShown": true,
   "git.mergeEditor": true, // conflict 시 diff 화면 스타일을 3-way merge로 표시
   "problems.autoReveal": false,
-  "projectManager.git.baseFolders": [
-    "/Users/biniruu/Projects",
-    "/Users/biniruu/Learning"
-  ],
+  "projectManager.git.baseFolders": ["/Users/biniruu/Projects", "/Users/biniruu/Learning"],
   "puglint.enable": true,
   "python.formatting.provider": "black",
   "python.jediEnabled": false,
@@ -186,6 +177,9 @@
     "errorlens",
     "esbenp",
     "estree",
+    "flexbugs",
+    "gridcell",
+    "hexrgba",
     "Immer",
     "intellicode",
     "jsxdev",
@@ -194,12 +188,19 @@
     "listbox",
     "nocheck",
     "nocomment",
+    "nuxi",
+    "nuxtjs",
     "octref",
     "Orta",
     "Polacode",
+    "radiogroup",
     "reduxjs",
+    "tablist",
     "tailwindcss",
+    "treegrid",
+    "treeitem",
     "TTFB",
+    "typeahead",
     "vanillajs",
     "Vetur",
     "vscodeintellicode",
